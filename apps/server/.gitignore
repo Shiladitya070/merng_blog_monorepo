@@ -1,0 +1,5 @@
+node_modules/
+dist/
+# Ignore .env file
+./client/.env
+.env
