@@ -2,6 +2,8 @@
   "name": "merng_blog_monorepo",
   "private": true,
   "scripts": {
+    "start:server": "node apps/server/dist/index.js",
+    "start:next": "cd apps/client && npm run start",
     "build": "turbo build",
     "dev": "turbo dev",
     "lint": "turbo lint",
