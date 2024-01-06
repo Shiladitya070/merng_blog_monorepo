@@ -6,6 +6,7 @@ import cors from 'cors';
 import { PORT, MONGO_URI } from './config';
 import userRouter from './routers/user';
 import postRouter from './routers/post';
+import { client } from './helpers/email';
 
 const app = express();
 
@@ -19,6 +20,7 @@ app.get('/health', (req: Request, res: Response) => {
     return res.status(200).json({ msg: 'OK' });
 });
 app.get('/', (req: Request, res: Response) => {
+
     return res.status(200).send("<h1>Mern Blog backend 2</h1>")
 })
 app.use('/*', (req: Request, res: Response) => { return res.status(404).json({ msg: 'NOT FOUND' }) });

@@ -1,6 +1,8 @@
 export default async function Home() {
 
   return (
-    <h1>Test Blog</h1>
+    <div>
+      <h1>THE BLOG</h1>
+    </div>
   )
 }
