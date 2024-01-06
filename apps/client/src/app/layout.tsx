@@ -18,9 +18,12 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={inter.className}>
-        <RecoilRoot>
-          {children}
-        </RecoilRoot>
+
+
+        {/* <RecoilRoot> */}
+        {children}
+        {/* </RecoilRoot> */}
+
       </body>
     </html>
   )
