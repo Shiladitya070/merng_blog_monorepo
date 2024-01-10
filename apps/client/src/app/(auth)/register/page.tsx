@@ -4,9 +4,10 @@ import { userType, userZod } from "@blog_mern/common";
 import { zodResolver } from "@hookform/resolvers/zod";
 import axios from "axios";
 import { useForm } from "react-hook-form";
-import { redirect } from "next/navigation";
+import { useRouter } from "next/navigation";
 
 export default () => {
+    const router = useRouter()
     const url = `${process.env.NEXT_PUBLIC_SERVER}/user/register`
     const { register,
         handleSubmit,
@@ -20,7 +21,7 @@ export default () => {
             localStorage.setItem('token', res.data.token);
         }
         reset();
-        redirect('/');
+        router.push('/');
     }
     return (
         <div className="flex justify-center items-center h-screen">

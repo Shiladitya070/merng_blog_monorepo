@@ -4,6 +4,7 @@ import { Inter } from 'next/font/google'
 import './globals.css'
 import NavBar from '@/components/navBar'
 import RecoidContextProvider from '@/providers/recoilContextProvider'
+import GetUser from '@/components/getUser'
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -22,6 +23,7 @@ export default function RootLayout({
       <body className={inter.className}>
         <RecoidContextProvider>
           <NavBar />
+          <GetUser />
           {children}
         </RecoidContextProvider>
       </body>
