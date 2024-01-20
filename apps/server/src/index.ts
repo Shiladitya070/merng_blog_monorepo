@@ -6,7 +6,7 @@ import cors from 'cors';
 import { PORT, MONGO_URI } from './config';
 import userRouter from './routers/user';
 import postRouter from './routers/post';
-import { client } from './helpers/email';
+import { resend } from './helpers/sendEmail';
 
 const app = express();
 
@@ -17,6 +17,12 @@ app.use(cors())
 app.use('/user', userRouter);
 app.use('/post', postRouter);
 app.get('/health', (req: Request, res: Response) => {
+    resend.emails.send({
+        from: 'onboarding@resend.dev',
+        to: 'shiladityad940@gmail.com',
+        subject: 'Hello World',
+        html: '<p>Congrats on sending your <strong>first email</strong>!</p>'
+    });
     return res.status(200).json({ msg: 'OK' });
 });
 app.get('/', (req: Request, res: Response) => {
